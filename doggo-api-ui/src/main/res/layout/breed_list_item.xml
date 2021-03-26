@@ -17,21 +17,15 @@
             android:orientation="vertical"
             android:padding="8dp">
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scaleType="centerCrop" />
 
             <TextView
                 android:id="@+id/doggoName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="4dp"
-                android:text="Caption"
+                android:layout_marginStart="4dp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#333333" />
+                 />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </FrameLayout>

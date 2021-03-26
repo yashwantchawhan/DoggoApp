@@ -46,6 +46,7 @@ dependencies {
     implementation rx.rxAndroid
     implementation rx.rxKotlin
     implementation Google.dagger
+    implementation ExternalLib.shimmer
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.0'
     kapt Google.daggerCompiler
 

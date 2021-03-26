@@ -11,6 +11,8 @@
         <entry key="doggo-api-ui/src/main/res/layout/fragment_detail_breed.xml" value="0.2803442028985507" />
         <entry key="doggo-api-ui/src/main/res/layout/fragment_list_breed.xml" value="0.2803442028985507" />
         <entry key="doggo-api-ui/src/main/res/layout/fragment_list_sub_breed.xml" value="0.2803442028985507" />
+        <entry key="doggo-api-ui/src/main/res/layout/shimmer_layout.xml" value="0.2803442028985507" />
+        <entry key="doggo-api-ui/src/main/res/layout/shimmer_layout_image.xml" value="0.2803442028985507" />
         <entry key="doggo-api-ui/src/main/res/layout/sub_breed_list_item.xml" value="0.2803442028985507" />
       </map>
     </option>

@@ -3,11 +3,12 @@ package com.yashwant.doggo_api_ui.view.breedlist
 import android.app.Activity
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.View
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.facebook.shimmer.ShimmerFrameLayout
 import com.yashwant.doggo_api_bridge.state.DoggoState
 import com.yashwant.doggo_api_ui.R
 import com.yashwant.doggo_api_ui.di.DaggerBreedListComponent
@@ -18,11 +19,15 @@ class BreedListFragment : Fragment(R.layout.fragment_list_breed) {
 
     @Inject
     lateinit var breedListViewModel: BreedListViewModel
-    lateinit var breedListAdapter: BreedListAdapter
-    lateinit var recyclerView: RecyclerView
+    private lateinit var breedListAdapter: BreedListAdapter
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var errorTextView: TextView
+    private lateinit var shimmerFrameLayout: ShimmerFrameLayout
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recyclerView = view.findViewById(R.id.breedList)
+        errorTextView = view.findViewById(R.id.errorTextView)
+        shimmerFrameLayout = view.findViewById(R.id.shimmerLayout);
         recyclerView.layoutManager = GridLayoutManager(activity, 2)
         breedListAdapter = BreedListAdapter()
         recyclerView.adapter = breedListAdapter
@@ -59,18 +64,26 @@ class BreedListFragment : Fragment(R.layout.fragment_list_breed) {
         (activity.application as DoggoDependenciesProvider).doggoCommonDependencies()
 
     private fun renderLoadingState() {
-        Log.d("MainActivity", "Loading")
+        shimmerFrameLayout.visibility = View.VISIBLE
+        shimmerFrameLayout.startShimmer();
     }
 
     private fun renderDataState(dataState: DoggoState.DataState) {
+        shimmerFrameLayout.stopShimmer();
+        shimmerFrameLayout.visibility = View.GONE
         breedListAdapter.setDoggoList(dataState.data)
-        Log.d("MainActivity", dataState.data[0])
+    }
+
+    private fun renderErrorState(dataState: DoggoState.ErrorState) {
+        shimmerFrameLayout.visibility = View.GONE
+        shimmerFrameLayout.stopShimmer()
+        recyclerView.visibility = View.GONE
+        errorTextView.visibility = View.VISIBLE
+        errorTextView.text = dataState.data
     }
 }
 
-private fun renderErrorState(dataState: DoggoState.ErrorState) {
-    Log.d("MainActivity", dataState.data)
-}
+
 
 
 
