@@ -1,0 +1,121 @@
+ext {
+    //kotlin
+    kotlinVersion = "1.4.31"
+    // Rx libs
+    rxKotlinVersion = "2.4.0"
+    rxAndroidVersion = "2.1.1"
+    rxJavaVersion = "2.2.20"
+    //google
+    googleDaggerVersion = "2.31"
+    //square
+    retrofitVersion = "2.9.0"
+    // androidx
+    androidxConstraintLayoutVersion = "2.0.1"
+    androidxAppcompatVersion = "1.2.0"
+    androidxCarviewVersion = "1.0.0"
+    googleMaterialVersion = "1.2.0"
+    androidxRecylerViewVersion = "1.1.0"
+    androidxCoreVersion = "1.3.2"
+
+    // 3rd Party Tests Libs
+    jUnitVersion = "4.13.1"
+    mockitoVersion = "3.4.6"
+    mockitoKotlinVersion = "1.6.0"
+    hamcrestVersion = "1.3"
+    assertjVersion = "3.17.2"
+    rx2IdlerVersion = "0.11.0"
+    testButlerLibraryVersion = "2.1.0"
+    kakaoVersion = "2.4.0"
+
+    /// AndroidX for tests
+    androidxExpressoCoreVersion = "3.3.0"
+    androidxExpressoContribVersion = "3.3.0"
+    androidxRulesVersion = "1.3.0"
+    androidxrunnerVersion = "1.3.0"
+    androidxExpressoIdlingVersion = "3.3.0"
+    androidxExpressoIntentVersion = "3.3.0"
+    androidxUiAutomatorVersion = "2.2.0"
+    androidXjUnitVersion = "1.1.2"
+    jetpackComposeVersion = "1.0.0-beta01"
+    composeActivityVersion = "1.3.0-alpha03"
+    viewModelLifeCycle = "1.0.0-alpha02"
+    archChoreTesting = "2.1.0"
+
+    //Navigation
+    navVersion = "2.3.4"
+
+    glideVersion = "4.12.0"
+
+
+
+    AndroidX = [
+            supportCore             : "androidx.core:core:" + androidxCoreVersion,
+            constraintLayout        : "androidx.constraintlayout:constraintlayout:" + androidxConstraintLayoutVersion,
+            appcompatV7             : "androidx.appcompat:appcompat:" + androidxAppcompatVersion,
+            androidSupportCardViewV7: "androidx.cardview:cardview:" + androidxCarviewVersion,
+            recyclerviewV7          : "androidx.recyclerview:recyclerview:" + androidxRecylerViewVersion,
+            materialLibrary         : "com.google.android.material:material:" + googleMaterialVersion,
+    ]
+
+    Square = [
+            retrofitRxjavaAdapter: "com.squareup.retrofit2:adapter-rxjava2:" + retrofitVersion,
+            retrofitConverterGson: "com.squareup.retrofit2:converter-gson:" + retrofitVersion,
+            retrofit             : "com.squareup.retrofit2:retrofit:" + retrofitVersion
+    ]
+
+    rx = [
+            rxKotlin : "io.reactivex.rxjava2:rxkotlin:" + rxKotlinVersion,
+            rxAndroid: "io.reactivex.rxjava2:rxandroid:" + rxAndroidVersion,
+            rxJava   : "io.reactivex.rxjava2:rxjava:" + rxJavaVersion
+    ]
+    Jetbrain = [
+            kotlin: "org.jetbrains.kotlin:kotlin-stdlib:" + kotlinVersion
+    ]
+
+    Google = [
+            daggerCompiler      : "com.google.dagger:dagger-compiler:" + googleDaggerVersion,
+            dagger              : "com.google.dagger:dagger:" + googleDaggerVersion,
+            androidSupportDesign: [
+                    AndroidX.materialLibrary,
+                    AndroidX.swipeRefreshLayout,
+                    AndroidX.androidXLocalBroadcast,
+            ]
+    ]
+
+    Navigation = [
+            navigationFragment      : "androidx.navigation:navigation-fragment:" + navVersion,
+            navigationUI            : "androidx.navigation:navigation-ui:" + navVersion,
+            navigationFragmentKtx   : "androidx.navigation:navigation-fragment-ktx:" + navVersion,
+            navigationUIKtx         : "androidx.navigation:navigation-ui-ktx:" + navVersion,
+            navigationDynamicFeature: "androidx.navigation:navigation-dynamic-features-fragment:" + navVersion,
+            navigationTesting       : "androidx.navigation:navigation-testing:" + navVersion,
+            navigationCompose       : "androidx.navigation:navigation-compose:1.0.0-alpha09"
+    ]
+
+    AndroidXTests = [
+            espresso              : "androidx.test.espresso:espresso-core:" + androidxExpressoCoreVersion,
+            archChore             :  "androidx.arch.core:core-testing:" + archChoreTesting,
+            espressoContrib       : "androidx.test.espresso:espresso-contrib:" + androidxExpressoContribVersion,
+            espressoRule          : "androidx.test:rules:" + androidxRulesVersion,
+            espressoRunner        : "androidx.test:runner:" + androidxrunnerVersion,
+            espressoIdlingResource: "androidx.test.espresso:espresso-idling-resource:" + androidxExpressoIdlingVersion,
+            espressoIntents       : "androidx.test.espresso:espresso-intents:" + androidxExpressoIntentVersion,
+            uiAutomator           : "androidx.test.uiautomator:uiautomator:" + androidxUiAutomatorVersion,
+            androidXjUnit         : "androidx.test.ext:junit:" + androidXjUnitVersion,
+    ]
+
+    OtherTests = [
+            jUnit       : "junit:junit:" + jUnitVersion,
+            mockito     : "org.mockito:mockito-core:" + mockitoVersion,
+            mokitoKotlin: "com.nhaarman:mockito-kotlin:" + mockitoKotlinVersion,
+            hamcrest    : "org.hamcrest:hamcrest-all:" + hamcrestVersion,
+            assertj     : "org.assertj:assertj-core:" + assertjVersion,
+            kakao       : "com.agoda.kakao:kakao:" + kakaoVersion,
+    ]
+
+    ExternalLib = [
+            glide :                      "com.github.bumptech.glide:glide:" + glideVersion,
+            glideCompiler :              "com.github.bumptech.glide:compiler:" + glideVersion,
+    ]
+
+}

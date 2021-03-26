@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/breedListFragment">
+
+    <fragment
+        android:id="@+id/breedListFragment"
+        android:name="com.yashwant.doggo_api_ui.view.breedlist.BreedListFragment"
+        android:label="BreedListFragment" >
+        <action
+            android:id="@+id/action_breedListFragment_to_subBreedFragment"
+            app:destination="@id/subBreedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/subBreedFragment"
+        android:name="com.yashwant.doggo_api_ui.view.subbreed.SubBreedFragment"
+        android:label="SubBreedFragment" >
+        <action
+            android:id="@+id/action_subBreedFragment_to_breedDetailFragment"
+            app:destination="@id/breedDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/breedDetailFragment"
+        android:name="com.yashwant.doggo_api_ui.view.subbreeddetail.BreedDetailFragment"
+        android:label="BreedDetailFragment" />
+</navigation>
