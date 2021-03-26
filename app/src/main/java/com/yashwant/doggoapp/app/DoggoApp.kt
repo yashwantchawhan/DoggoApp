@@ -1,8 +1,6 @@
 package com.yashwant.doggoapp.app
 
 import android.app.Application
-import android.content.Context
-import com.yashwant.doggo_api_ui.di.DaggerMainActivityComponent.builder
 import com.yashwant.doggo_api_ui.di.DoggoCommonDependencies
 import com.yashwant.doggo_api_ui.di.DoggoDependenciesProvider
 import com.yashwant.doggoapp.di.AppComponent

@@ -58,7 +58,14 @@ dependencies {
 
     androidTestImplementation AndroidXTests.androidXjUnit
     androidTestImplementation AndroidXTests.espresso
+    androidTestImplementation Navigation.navigationTesting
     testImplementation AndroidXTests.archChore
+
+    debugImplementation  AndroidXTests.fragmentTesting
+    debugImplementation  AndroidXTests.fragmentKtx
+    debugImplementation  AndroidXTests.archChore
+    debugImplementation  AndroidXTests.espressoRule
+    debugImplementation  AndroidXTests.espressoRunner
 
     testImplementation OtherTests.jUnit
     testImplementation OtherTests.mockito

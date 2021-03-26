@@ -8,9 +8,8 @@ import com.yashwant.doggo_api_ui.di.DoggoDependenciesProvider
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        DaggerMainActivityComponent.builder()
-            .dependencies((application as DoggoDependenciesProvider).doggoCommonDependencies())
-            .build()
+        DaggerMainActivityComponent.factory()
+            .create((application as DoggoDependenciesProvider).doggoCommonDependencies())
             .inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

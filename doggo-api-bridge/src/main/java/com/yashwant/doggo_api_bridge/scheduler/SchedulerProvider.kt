@@ -1,4 +1,4 @@
-package com.yashwant.doggo_api_ui.scheduler
+package com.yashwant.doggo_api_bridge.scheduler
 
 import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers

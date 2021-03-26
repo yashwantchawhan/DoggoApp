@@ -3,6 +3,7 @@ package com.yashwant.doggo_api.di
 import com.yashwant.doggo_api.impl.DoggoRepositoryImpl
 import com.yashwant.doggo_api_bridge.api.DoggoAPI
 import com.yashwant.doggo_api_bridge.repository.DoggoRepository
+import com.yashwant.doggo_api_bridge.scheduler.SchedulerProvider
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -14,8 +15,13 @@ object DoggoRepoModule {
 
     @Provides
     fun provideDoggoAPIRepository(
-        doggoAPI: DoggoAPI
+        doggoAPI: DoggoAPI,
+        schedulerProvider: SchedulerProvider
     ): DoggoRepository = DoggoRepositoryImpl(
-        doggoAPI
+        doggoAPI,
+        schedulerProvider
     )
+
+    @Provides
+    fun schedulerProvider(): SchedulerProvider = SchedulerProvider()
 }

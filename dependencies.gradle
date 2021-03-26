@@ -47,14 +47,13 @@ ext {
     glideVersion = "4.12.0"
 
 
-
     AndroidX = [
             supportCore             : "androidx.core:core:" + androidxCoreVersion,
             constraintLayout        : "androidx.constraintlayout:constraintlayout:" + androidxConstraintLayoutVersion,
             appcompatV7             : "androidx.appcompat:appcompat:" + androidxAppcompatVersion,
             androidSupportCardViewV7: "androidx.cardview:cardview:" + androidxCarviewVersion,
             recyclerviewV7          : "androidx.recyclerview:recyclerview:" + androidxRecylerViewVersion,
-            materialLibrary         : "com.google.android.material:material:" + googleMaterialVersion,
+            materialLibrary         : "com.google.android.material:material:" + googleMaterialVersion
     ]
 
     Square = [
@@ -88,13 +87,12 @@ ext {
             navigationFragmentKtx   : "androidx.navigation:navigation-fragment-ktx:" + navVersion,
             navigationUIKtx         : "androidx.navigation:navigation-ui-ktx:" + navVersion,
             navigationDynamicFeature: "androidx.navigation:navigation-dynamic-features-fragment:" + navVersion,
-            navigationTesting       : "androidx.navigation:navigation-testing:" + navVersion,
-            navigationCompose       : "androidx.navigation:navigation-compose:1.0.0-alpha09"
+            navigationTesting       : "androidx.navigation:navigation-testing:" + navVersion
     ]
 
     AndroidXTests = [
             espresso              : "androidx.test.espresso:espresso-core:" + androidxExpressoCoreVersion,
-            archChore             :  "androidx.arch.core:core-testing:" + archChoreTesting,
+            archChore             : "androidx.arch.core:core-testing:" + archChoreTesting,
             espressoContrib       : "androidx.test.espresso:espresso-contrib:" + androidxExpressoContribVersion,
             espressoRule          : "androidx.test:rules:" + androidxRulesVersion,
             espressoRunner        : "androidx.test:runner:" + androidxrunnerVersion,
@@ -102,6 +100,8 @@ ext {
             espressoIntents       : "androidx.test.espresso:espresso-intents:" + androidxExpressoIntentVersion,
             uiAutomator           : "androidx.test.uiautomator:uiautomator:" + androidxUiAutomatorVersion,
             androidXjUnit         : "androidx.test.ext:junit:" + androidXjUnitVersion,
+            fragmentTesting       : "androidx.fragment:fragment-testing:1.1.0-beta01",
+            fragmentKtx           : "androidx.fragment:fragment-ktx:1.1.0-beta01",
     ]
 
     OtherTests = [
@@ -114,8 +114,8 @@ ext {
     ]
 
     ExternalLib = [
-            glide :                      "com.github.bumptech.glide:glide:" + glideVersion,
-            glideCompiler :              "com.github.bumptech.glide:compiler:" + glideVersion,
+            glide        : "com.github.bumptech.glide:glide:" + glideVersion,
+            glideCompiler: "com.github.bumptech.glide:compiler:" + glideVersion,
     ]
 
 }

@@ -2,7 +2,7 @@ package com.yashwant.doggo_api_ui.di
 
 import android.app.Activity
 import com.yashwant.doggo_api_bridge.repository.DoggoRepository
-import com.yashwant.doggo_api_ui.scheduler.SchedulerProvider
+import com.yashwant.doggo_api_bridge.scheduler.SchedulerProvider
 import com.yashwant.doggo_api_ui.view.BreedListViewModel
 import com.yashwant.doggo_api_ui.view.BreedListViewModelImpl
 import com.yashwant.doggo_api_ui.view.breedlist.BreedListFragment
@@ -19,7 +19,7 @@ interface BreedListComponent {
     @Component.Factory
     interface Factory {
         fun create(
-            starWarsCommonDependencies: DoggoCommonDependencies,
+            doggoCommonDependencies: DoggoCommonDependencies,
             @BindsInstance activity: Activity,
         ): BreedListComponent
     }
@@ -31,7 +31,6 @@ interface BreedListComponent {
 object BreedListModule {
 
     @Provides
-    @JvmStatic
     fun breedListViewModel(
         doggoRepository: DoggoRepository,
         schedulerProvider: SchedulerProvider
@@ -39,9 +38,4 @@ object BreedListModule {
         doggoRepository,
         schedulerProvider
     )
-
-
-    @Provides
-    @JvmStatic
-    fun schedularProvider(): SchedulerProvider = SchedulerProvider()
 }

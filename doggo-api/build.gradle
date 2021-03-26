@@ -32,24 +32,20 @@ android {
 }
 
 dependencies {
-
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation AndroidX.supportCore
     implementation AndroidX.appcompatV7
     implementation Square.retrofit
+    implementation rx.rxJava
 
-    //dagger dependency
     implementation Google.dagger
     kapt Google.daggerCompiler
 
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.20'
-
     implementation project(':doggo-api-bridge')
 
-
-
-
-
+    testImplementation OtherTests.jUnit
+    testImplementation OtherTests.mockito
+    testImplementation OtherTests.mokitoKotlin
 
 
 }

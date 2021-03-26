@@ -1,13 +1,11 @@
-package com.yashwant.doggo_api_ui.view
+package com.yashwant.doggo_api_ui.view.subbreed
 
 import androidx.lifecycle.MutableLiveData
 import com.yashwant.doggo_api_bridge.repository.DoggoRepository
-import com.yashwant.doggo_api_bridge.state.DoggoState
+import com.yashwant.doggo_api_bridge.scheduler.SchedulerProvider
 import com.yashwant.doggo_api_bridge.state.SubBreedState
-import com.yashwant.doggo_api_ui.scheduler.SchedulerProvider
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.subscribeBy
-import javax.inject.Inject
 
 interface SubBreedViewModel {
     fun bind(breedName: String)
