@@ -1,9 +1,6 @@
 package com.yashwant.doggo_api_ui.di
 
-import android.app.Activity
 import com.yashwant.doggo_api_ui.view.MainActivity
-import com.yashwant.doggo_api_ui.view.subbreed.SubBreedFragment
-import dagger.BindsInstance
 import dagger.Component
 import dagger.Module
 import javax.inject.Scope

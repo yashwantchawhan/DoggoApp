@@ -3,8 +3,8 @@ package com.yashwant.doggo_api_ui.di
 import android.app.Activity
 import com.yashwant.doggo_api_bridge.repository.DoggoRepository
 import com.yashwant.doggo_api_bridge.scheduler.SchedulerProvider
-import com.yashwant.doggo_api_ui.view.BreedListViewModel
-import com.yashwant.doggo_api_ui.view.BreedListViewModelImpl
+import com.yashwant.doggo_api_ui.view.breedlist.BreedListViewModel
+import com.yashwant.doggo_api_ui.view.breedlist.BreedListViewModelImpl
 import com.yashwant.doggo_api_ui.view.breedlist.BreedListFragment
 import dagger.BindsInstance
 import dagger.Component

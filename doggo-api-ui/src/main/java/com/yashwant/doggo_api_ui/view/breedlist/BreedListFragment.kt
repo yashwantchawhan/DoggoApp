@@ -12,7 +12,6 @@ import com.yashwant.doggo_api_bridge.state.DoggoState
 import com.yashwant.doggo_api_ui.R
 import com.yashwant.doggo_api_ui.di.DaggerBreedListComponent
 import com.yashwant.doggo_api_ui.di.DoggoDependenciesProvider
-import com.yashwant.doggo_api_ui.view.BreedListViewModel
 import javax.inject.Inject
 
 class BreedListFragment : Fragment(R.layout.fragment_list_breed) {

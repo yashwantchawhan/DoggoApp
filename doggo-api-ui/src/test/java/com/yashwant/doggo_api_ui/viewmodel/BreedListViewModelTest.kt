@@ -1,20 +1,18 @@
 package com.yashwant.doggo_api_ui.viewmodel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.nhaarman.mockito_kotlin.times
 import com.nhaarman.mockito_kotlin.whenever
 import com.yashwant.doggo_api_bridge.repository.DoggoRepository
 import com.yashwant.doggo_api_bridge.scheduler.SchedulerProvider
 import com.yashwant.doggo_api_bridge.scheduler.TestSchedulerProvider
 import com.yashwant.doggo_api_bridge.state.DoggoState
-import com.yashwant.doggo_api_ui.view.BreedListViewModel
-import com.yashwant.doggo_api_ui.view.BreedListViewModelImpl
+import com.yashwant.doggo_api_ui.view.breedlist.BreedListViewModel
+import com.yashwant.doggo_api_ui.view.breedlist.BreedListViewModelImpl
 import io.reactivex.Observable
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import org.junit.rules.TestRule
 import org.mockito.Mock
 import org.mockito.MockitoAnnotations
 

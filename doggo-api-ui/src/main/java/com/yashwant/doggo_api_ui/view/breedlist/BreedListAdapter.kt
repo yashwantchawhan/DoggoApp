@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.yashwant.doggo_api_ui.R
+import com.yashwant.doggo_api_ui.view.KEY_BREED_NAME
 
 class BreedListAdapter : RecyclerView.Adapter<BreedListAdapter.DoggoListHolder>() {
 
@@ -35,7 +36,7 @@ class BreedListAdapter : RecyclerView.Adapter<BreedListAdapter.DoggoListHolder>(
         holder.textView.text = differ.currentList.get(position)
         holder.itemView.setOnClickListener {
             val bundle = Bundle().also {
-                it.putString("breedName", differ.currentList.get(position))
+                it.putString(KEY_BREED_NAME, differ.currentList.get(position))
             }
             holder.textView.findNavController().navigate(
                 R.id.action_breedListFragment_to_subBreedFragment,

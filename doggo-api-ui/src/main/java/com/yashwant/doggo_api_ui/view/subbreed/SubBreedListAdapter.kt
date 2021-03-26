@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import com.bumptech.glide.Glide
 import com.yashwant.doggo_api_ui.R
+import com.yashwant.doggo_api_ui.view.KEY_URL
 
 
 class SubBreedListAdapter() : RecyclerView.Adapter<SubBreedListAdapter.SubBreedListViewHolder>() {
@@ -46,7 +47,7 @@ class SubBreedListAdapter() : RecyclerView.Adapter<SubBreedListAdapter.SubBreedL
 
         holder.itemView.setOnClickListener {
             val bundle = Bundle().apply {
-                putString("url",url)
+                putString(KEY_URL,url)
             }
             holder.itemView.findNavController().navigate(
                 R.id.action_subBreedFragment_to_breedDetailFragment,
