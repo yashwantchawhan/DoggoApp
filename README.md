@@ -1,7 +1,5 @@
 # DoggoApp
 
-
-
 # the technology used in the project
 1. Kotlin
 2. MVVM
@@ -13,6 +11,6 @@
 8. Single Activity Architecture
 
 # Architecture used in the project
-1. Followed multimodule architecture. 
+1. Followed multi module architecture. 
 2. Used CommonDependencies provider pattern
 3. Use MVI state pattern
