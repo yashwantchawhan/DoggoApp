@@ -79,7 +79,6 @@ class SubBreedFragment : Fragment(R.layout.fragment_list_sub_breed), SubBreedLis
 
     override fun onStop() {
         super.onStop()
-        subBreedViewModel.unbind()
     }
 
     private fun setUpDI() {

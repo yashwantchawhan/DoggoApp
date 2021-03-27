@@ -61,7 +61,6 @@ class BreedListFragment : Fragment(R.layout.fragment_list_breed), ListItemClickL
 
     override fun onStop() {
         super.onStop()
-        breedListViewModel.unbind()
     }
 
     private fun dependencies(activity: Activity) =

@@ -10,7 +10,6 @@ import io.reactivex.rxkotlin.subscribeBy
 
 interface BreedListViewModel {
     fun bind()
-    fun unbind()
     fun getData(): MutableLiveData<DoggoState>
 }
 
@@ -23,12 +22,6 @@ class BreedListViewModelImpl(
 
     override fun bind() {
         compositeDisposable.add(observeDoggoList())
-    }
-
-    override fun unbind() {
-        if (!compositeDisposable.isDisposed) {
-            compositeDisposable.dispose()
-        }
     }
 
     override fun getData(): MutableLiveData<DoggoState> {
@@ -47,4 +40,11 @@ class BreedListViewModelImpl(
         }) {
             state.postValue(it)
         }
+
+    override fun onCleared() {
+        super.onCleared()
+        if (!compositeDisposable.isDisposed) {
+            compositeDisposable.dispose()
+        }
+    }
 }
