@@ -24,7 +24,7 @@ class BreedDetailFragment : Fragment(R.layout.fragment_detail_breed) {
     }
 
     private fun setUpDI() {
-        activity?.let {
+        requireActivity().let {
             DaggerBreedDetailComponent.factory()
                 .create(dependencies(it), it)
                 .inject(this)

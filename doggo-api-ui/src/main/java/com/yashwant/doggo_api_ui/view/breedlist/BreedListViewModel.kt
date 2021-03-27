@@ -37,7 +37,8 @@ class BreedListViewModelImpl(
 
     private fun observeDoggoList() = doggoRepository
         .getAllBreedsList()
-        .subscribeOn(schedulerProvider.ui())
+        .subscribeOn(schedulerProvider.io())
+        .observeOn(schedulerProvider.ui())
         .doOnSubscribe {
             state.postValue(DoggoState.LoadingState)
         }

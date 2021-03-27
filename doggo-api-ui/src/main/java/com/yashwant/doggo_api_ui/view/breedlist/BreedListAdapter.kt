@@ -1,20 +1,17 @@
 package com.yashwant.doggo_api_ui.view.breedlist
 
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.navigation.findNavController
-import androidx.navigation.navOptions
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.yashwant.doggo_api_ui.R
-import com.yashwant.doggo_api_ui.view.KEY_BREED_NAME
 
 class BreedListAdapter : RecyclerView.Adapter<BreedListAdapter.DoggoListHolder>() {
 
+    private lateinit var listItemClickListener: ListItemClickListener
     private val differCallback = object : DiffUtil.ItemCallback<String>() {
         override fun areItemsTheSame(oldItem: String, newItem: String): Boolean {
             return oldItem == newItem
@@ -36,19 +33,7 @@ class BreedListAdapter : RecyclerView.Adapter<BreedListAdapter.DoggoListHolder>(
     override fun onBindViewHolder(holder: DoggoListHolder, position: Int) {
         holder.textView.text = differ.currentList[position]
         holder.itemView.setOnClickListener {
-            val bundle = Bundle().also {
-                it.putString(KEY_BREED_NAME, differ.currentList[position])
-            }
-            holder.textView.findNavController().navigate(
-                R.id.action_breedListFragment_to_subBreedFragment,
-                bundle,
-                navOptions { // Use the Kotlin DSL for building NavOptions
-                    anim {
-                        enter = android.R.animator.fade_in
-                        exit = android.R.animator.fade_out
-                    }
-                }
-            )
+            listItemClickListener.onClick(differ.currentList[position])
         }
     }
 
@@ -65,4 +50,12 @@ class BreedListAdapter : RecyclerView.Adapter<BreedListAdapter.DoggoListHolder>(
         differ.submitList(list)
     }
 
+    fun setOnListItemClickListener(listener: ListItemClickListener) {
+        this.listItemClickListener = listener
+    }
+
+}
+
+interface ListItemClickListener {
+    fun onClick(breedName: String)
 }

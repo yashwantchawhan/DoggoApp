@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.navOptions
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.facebook.shimmer.ShimmerFrameLayout
@@ -13,9 +15,10 @@ import com.yashwant.doggo_api_bridge.state.DoggoState
 import com.yashwant.doggo_api_ui.R
 import com.yashwant.doggo_api_ui.di.DaggerBreedListComponent
 import com.yashwant.doggo_api_ui.di.DoggoDependenciesProvider
+import com.yashwant.doggo_api_ui.view.KEY_BREED_NAME
 import javax.inject.Inject
 
-class BreedListFragment : Fragment(R.layout.fragment_list_breed) {
+class BreedListFragment : Fragment(R.layout.fragment_list_breed), ListItemClickListener {
 
     @Inject
     lateinit var breedListViewModel: BreedListViewModel
@@ -30,6 +33,7 @@ class BreedListFragment : Fragment(R.layout.fragment_list_breed) {
         shimmerFrameLayout = view.findViewById(R.id.shimmerLayout);
         recyclerView.layoutManager = GridLayoutManager(activity, 2)
         breedListAdapter = BreedListAdapter()
+        breedListAdapter.setOnListItemClickListener(this)
         recyclerView.adapter = breedListAdapter
         breedListViewModel.getData().observe(viewLifecycleOwner, {
             when (it) {
@@ -48,7 +52,7 @@ class BreedListFragment : Fragment(R.layout.fragment_list_breed) {
     }
 
     private fun setUpDI() {
-        activity?.let {
+        requireActivity().let {
             DaggerBreedListComponent.factory()
                 .create(dependencies(it), it)
                 .inject(this)
@@ -80,6 +84,22 @@ class BreedListFragment : Fragment(R.layout.fragment_list_breed) {
         recyclerView.visibility = View.GONE
         errorTextView.visibility = View.VISIBLE
         errorTextView.text = dataState.data
+    }
+
+    override fun onClick(breedName: String) {
+        val bundle = Bundle().also {
+            it.putString(KEY_BREED_NAME, breedName)
+        }
+        findNavController().navigate(
+            R.id.action_breedListFragment_to_subBreedFragment,
+            bundle,
+            navOptions { // Use the Kotlin DSL for building NavOptions
+                anim {
+                    enter = android.R.animator.fade_in
+                    exit = android.R.animator.fade_out
+                }
+            }
+        )
     }
 }
 

@@ -17,6 +17,7 @@ import com.yashwant.doggo_api_ui.view.KEY_URL
 
 class SubBreedListAdapter(private val imageLoader: ImageLoader) : RecyclerView.Adapter<SubBreedListAdapter.SubBreedListViewHolder>() {
 
+    private lateinit var subBreedListItemClickListener: SubBreedListItemClickListener
     private val differCallback = object : DiffUtil.ItemCallback<String>() {
         override fun areItemsTheSame(oldItem: String, newItem: String): Boolean {
             return oldItem == newItem
@@ -39,19 +40,7 @@ class SubBreedListAdapter(private val imageLoader: ImageLoader) : RecyclerView.A
         val url = differ.currentList[position]
         imageLoader.loadImage(holder.imageView,url,R.drawable.ic_doggo)
         holder.itemView.setOnClickListener {
-            val bundle = Bundle().apply {
-                putString(KEY_URL,url)
-            }
-            holder.itemView.findNavController().navigate(
-                R.id.action_subBreedFragment_to_breedDetailFragment,
-                bundle,
-                navOptions {
-                    anim {
-                        enter = android.R.animator.fade_in
-                        exit = android.R.animator.fade_out
-                    }
-                }
-            )
+            subBreedListItemClickListener.onSubBreedItemClick(url)
         }
     }
 
@@ -66,4 +55,11 @@ class SubBreedListAdapter(private val imageLoader: ImageLoader) : RecyclerView.A
     fun submitList(list: List<String>) {
         differ.submitList(list)
     }
+    fun setOnSubBreedListItemClickListener(subBreedListItemClickListener: SubBreedListItemClickListener) {
+        this.subBreedListItemClickListener = subBreedListItemClickListener
+    }
+}
+
+interface SubBreedListItemClickListener {
+    fun onSubBreedItemClick(url: String)
 }

@@ -18,10 +18,8 @@ object DoggoRepoModule {
     @Provides
     fun provideDoggoAPIRepository(
         doggoAPI: DoggoAPI,
-        schedulerProvider: SchedulerProvider
     ): DoggoRepository = DoggoRepositoryImpl(
-        doggoAPI,
-        schedulerProvider
+        doggoAPI
     )
 
     @Provides

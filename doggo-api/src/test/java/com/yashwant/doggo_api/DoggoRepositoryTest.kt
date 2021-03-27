@@ -20,12 +20,11 @@ class DoggoRepositoryTest {
     lateinit var doggoAPI: DoggoAPI
 
     private lateinit var doggoRepository: DoggoRepository
-    private val testSchedulers = TestSchedulerProvider()
 
     @Before
     fun setUp() {
         MockitoAnnotations.openMocks(this)
-        doggoRepository = DoggoRepositoryImpl(doggoAPI, testSchedulers)
+        doggoRepository = DoggoRepositoryImpl(doggoAPI)
     }
 
     @Test

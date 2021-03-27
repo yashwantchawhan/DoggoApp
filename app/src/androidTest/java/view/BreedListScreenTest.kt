@@ -33,7 +33,6 @@ class BreedListScreenTest {
 
     @Test
     fun mainActivityTest() {
-        onView(withId(R.id.shimmerLayout)).check(matches(isDisplayed()))
         Thread.sleep(2000)
         val recyclerView = onView(
             allOf(

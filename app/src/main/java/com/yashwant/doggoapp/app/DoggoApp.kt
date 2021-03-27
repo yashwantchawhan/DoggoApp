@@ -19,7 +19,6 @@ class DoggoApp : Application(), DoggoDependenciesProvider {
         component = DaggerAppComponent.builder()
             .application(this)
             .build()
-        component.inject(this)
     }
 
     // the dependencies provide from App level

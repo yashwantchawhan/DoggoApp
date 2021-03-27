@@ -30,8 +30,6 @@ interface AppComponent : DoggoCommonDependencies {
 
         fun build(): AppComponent
     }
-
-    fun inject(app: DoggoApp)
 }
 
 @Module(
