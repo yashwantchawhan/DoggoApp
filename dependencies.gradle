@@ -36,6 +36,7 @@ ext {
     androidxExpressoIntentVersion = "3.3.0"
     androidxUiAutomatorVersion = "2.2.0"
     androidXjUnitVersion = "1.1.2"
+    androidXLifeCycle = "2.3.0"
     jetpackComposeVersion = "1.0.0-beta01"
     composeActivityVersion = "1.3.0-alpha03"
     viewModelLifeCycle = "1.0.0-alpha02"
@@ -53,7 +54,8 @@ ext {
             appcompatV7             : "androidx.appcompat:appcompat:" + androidxAppcompatVersion,
             androidSupportCardViewV7: "androidx.cardview:cardview:" + androidxCarviewVersion,
             recyclerviewV7          : "androidx.recyclerview:recyclerview:" + androidxRecylerViewVersion,
-            materialLibrary         : "com.google.android.material:material:" + googleMaterialVersion
+            materialLibrary         : "com.google.android.material:material:" + googleMaterialVersion,
+            lifeCycle               : "androidx.lifecycle:lifecycle-livedata-ktx:" + androidXLifeCycle
     ]
 
     Square = [
