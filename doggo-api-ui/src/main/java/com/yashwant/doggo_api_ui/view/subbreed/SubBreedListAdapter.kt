@@ -38,8 +38,8 @@ class SubBreedListAdapter() : RecyclerView.Adapter<SubBreedListAdapter.SubBreedL
     override fun onBindViewHolder(holder: SubBreedListViewHolder, position: Int) {
         val url = differ.currentList[position]
         Glide.with(holder.imageView)
-            .load(url) //3
-            .centerCrop() //4
+            .load(url)
+            .centerCrop()
             .placeholder(R.drawable.ic_doggo)
             .error(R.drawable.ic_doggo)
             .fallback(R.drawable.ic_doggo)
@@ -52,7 +52,7 @@ class SubBreedListAdapter() : RecyclerView.Adapter<SubBreedListAdapter.SubBreedL
             holder.itemView.findNavController().navigate(
                 R.id.action_subBreedFragment_to_breedDetailFragment,
                 bundle,
-                navOptions { // Use the Kotlin DSL for building NavOptions
+                navOptions {
                     anim {
                         enter = android.R.animator.fade_in
                         exit = android.R.animator.fade_out

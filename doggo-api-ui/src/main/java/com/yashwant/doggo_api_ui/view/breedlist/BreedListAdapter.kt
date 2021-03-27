@@ -19,6 +19,7 @@ class BreedListAdapter : RecyclerView.Adapter<BreedListAdapter.DoggoListHolder>(
         override fun areItemsTheSame(oldItem: String, newItem: String): Boolean {
             return oldItem == newItem
         }
+
         override fun areContentsTheSame(oldItem: String, newItem: String): Boolean {
             return oldItem == newItem
         }

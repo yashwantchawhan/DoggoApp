@@ -22,7 +22,6 @@ annotation class AppScope
     modules = [AppModule::class]
 )
 interface AppComponent : DoggoCommonDependencies {
-    // Using dagger build pattern
     @Component.Builder
     interface Builder {
 

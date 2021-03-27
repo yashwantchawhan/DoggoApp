@@ -11,7 +11,6 @@ open class SchedulerProvider {
     open fun ui(): Scheduler = AndroidSchedulers.mainThread()
 }
 
-// mock scheduler for testing viewmodel or api calls
 class TestSchedulerProvider : SchedulerProvider() {
 
     override fun io(): Scheduler = Schedulers.trampoline()

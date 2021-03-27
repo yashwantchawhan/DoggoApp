@@ -14,6 +14,7 @@ import com.yashwant.doggo_api_bridge.state.SubBreedState
 import com.yashwant.doggo_api_ui.R
 import com.yashwant.doggo_api_ui.di.DaggerSubBreedComponent
 import com.yashwant.doggo_api_ui.di.DoggoDependenciesProvider
+import com.yashwant.doggo_api_ui.view.KEY_BREED_NAME
 import javax.inject.Inject
 
 class SubBreedFragment : Fragment(R.layout.fragment_list_sub_breed) {
@@ -64,7 +65,7 @@ class SubBreedFragment : Fragment(R.layout.fragment_list_sub_breed) {
     override fun onAttach(context: Context) {
         super.onAttach(context)
         setUpDI()
-        val breedName = arguments?.getString("breedName")
+        val breedName = arguments?.getString(KEY_BREED_NAME)
         breedName?.let { subBreedViewModel.bind(it) }
     }
 

@@ -5,14 +5,14 @@ import android.view.View
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
-import com.yashwant.doggo_api_bridge.state.DoggoState
 import com.yashwant.doggo_api_ui.R
+import com.yashwant.doggo_api_ui.view.KEY_URL
 
 class BreedDetailFragment : Fragment(R.layout.fragment_detail_breed) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val imageView : AppCompatImageView = view.findViewById(R.id.imageView)
-        val url = arguments?.getString("url")
+        val url = arguments?.getString(KEY_URL)
         Glide.with(imageView)
             .load(url) //3
             .centerCrop() //4
