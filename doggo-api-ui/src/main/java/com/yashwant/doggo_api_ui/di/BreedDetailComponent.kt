@@ -24,6 +24,4 @@ interface BreedDetailComponent {
 }
 
 @Module
-object BreedDetailModule {
-
-}
+object BreedDetailModule {}

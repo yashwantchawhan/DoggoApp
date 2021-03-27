@@ -3,16 +3,15 @@ package view
 
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.viewModels
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.action.ViewActions.*
-import androidx.test.espresso.assertion.ViewAssertions.*
+import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition
 import androidx.test.espresso.matcher.ViewMatchers.*
+import androidx.test.ext.junit.rules.ActivityScenarioRule
+import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
-import androidx.test.rule.ActivityTestRule
-import androidx.test.runner.AndroidJUnit4
 import com.yashwant.doggo_api_ui.R
 import com.yashwant.doggo_api_ui.view.MainActivity
 import org.hamcrest.Description
@@ -28,12 +27,13 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class BreedListScreenTest {
 
-    @Rule
-    @JvmField
-    var mActivityTestRule = ActivityTestRule(MainActivity::class.java)
+    @get:Rule
+    var activityRule: ActivityScenarioRule<MainActivity> =
+        ActivityScenarioRule(MainActivity::class.java)
 
     @Test
     fun mainActivityTest() {
+        onView(withId(R.id.shimmerLayout)).check(matches(isDisplayed()))
         Thread.sleep(2000)
         val recyclerView = onView(
             allOf(
