@@ -31,7 +31,6 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation rx.rxJava
     implementation Square.retrofit
     implementation AndroidX.supportCore

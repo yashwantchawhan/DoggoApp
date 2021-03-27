@@ -32,7 +32,6 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation AndroidX.supportCore
     implementation AndroidX.appcompatV7
     implementation Square.retrofit
@@ -40,6 +39,7 @@ dependencies {
 
     implementation Google.dagger
     kapt Google.daggerCompiler
+
     implementation ExternalLib.glide
     implementation ExternalLib.glideCompiler
 
