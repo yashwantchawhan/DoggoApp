@@ -13,6 +13,6 @@
 8. Single Activity Architecture
 
 # Architecture used in the project
-Followed multimodule architecture. 
-Used CommonDependencies provider pattern
-Use MVI state pattern
+1. Followed multimodule architecture. 
+2. Used CommonDependencies provider pattern
+3. Use MVI state pattern
