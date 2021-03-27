@@ -1,8 +1,6 @@
 # DoggoApp
 
-# Followed multimodule architecture. 
-# Used CommonDependencies provider pattern
-# Use MVI state pattern
+
 
 # the technology used in the project
 1. Kotlin
@@ -13,3 +11,8 @@
 6. Navigation Components
 7. Retrofit2
 8. Single Activity Architecture
+
+# Architecture used in the project
+Followed multimodule architecture. 
+Used CommonDependencies provider pattern
+Use MVI state pattern
