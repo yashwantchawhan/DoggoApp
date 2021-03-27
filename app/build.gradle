@@ -36,6 +36,7 @@ dependencies {
     // support
     implementation AndroidX.supportCore
     implementation AndroidX.appcompatV7
+    implementation AndroidX.materialLibrary
 
     //Kotlin
     implementation Jetbrain.kotlin
@@ -57,12 +58,7 @@ dependencies {
     androidTestImplementation AndroidXTests.androidXjUnit
     androidTestImplementation AndroidXTests.espresso
     androidTestImplementation Navigation.navigationTesting
-    testImplementation AndroidXTests.archChore
-
-    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.1.0'
-    implementation AndroidX.materialLibrary
-    implementation AndroidX.constraintLayout
-    implementation AndroidX.androidSupportCardViewV7
+    androidTestImplementation AndroidXTests.espressoContrib
 
 
     debugImplementation AndroidXTests.fragmentTesting
@@ -71,6 +67,7 @@ dependencies {
     debugImplementation AndroidXTests.espressoRule
     debugImplementation AndroidXTests.espressoRunner
 
+    testImplementation AndroidXTests.archChore
     testImplementation OtherTests.jUnit
     testImplementation OtherTests.mockito
     testImplementation OtherTests.mokitoKotlin
