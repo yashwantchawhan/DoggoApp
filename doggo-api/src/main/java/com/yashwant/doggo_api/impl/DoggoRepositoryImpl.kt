@@ -14,13 +14,25 @@ class DoggoRepositoryImpl(
     override fun getAllBreedsList(): Observable<DoggoState> =
         doggoAPI.getAllBreedsList()
             .subscribeOn(schedulerProvider.io())
-            .map<DoggoState> { it.message.let { DoggoState.DataState(it) } }
+            .map<DoggoState> { doggoResponse ->
+                doggoResponse.message.let {
+                    DoggoState.DataState(
+                        it
+                    )
+                }
+            }
             .onErrorReturn { DoggoState.ErrorState(it.localizedMessage) }
 
     override fun getSubBreedList(breedName: String): Observable<SubBreedState> {
         return doggoAPI.getSubBreedList(breedName)
             .subscribeOn(schedulerProvider.io())
-            .map<SubBreedState> { it.message.let { SubBreedState.DataState(it) } }
+            .map<SubBreedState> { doggoResponse ->
+                doggoResponse.message.let {
+                    SubBreedState.DataState(
+                        it
+                    )
+                }
+            }
             .onErrorReturn { SubBreedState.ErrorState(it.localizedMessage) }
     }
 }

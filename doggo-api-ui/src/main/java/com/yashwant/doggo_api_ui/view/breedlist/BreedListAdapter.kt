@@ -34,10 +34,10 @@ class BreedListAdapter : RecyclerView.Adapter<BreedListAdapter.DoggoListHolder>(
     }
 
     override fun onBindViewHolder(holder: DoggoListHolder, position: Int) {
-        holder.textView.text = differ.currentList.get(position)
+        holder.textView.text = differ.currentList[position]
         holder.itemView.setOnClickListener {
             val bundle = Bundle().also {
-                it.putString(KEY_BREED_NAME, differ.currentList.get(position))
+                it.putString(KEY_BREED_NAME, differ.currentList[position])
             }
             holder.textView.findNavController().navigate(
                 R.id.action_breedListFragment_to_subBreedFragment,
