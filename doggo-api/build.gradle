@@ -40,6 +40,8 @@ dependencies {
 
     implementation Google.dagger
     kapt Google.daggerCompiler
+    implementation ExternalLib.glide
+    implementation ExternalLib.glideCompiler
 
     implementation project(':doggo-api-bridge')
 

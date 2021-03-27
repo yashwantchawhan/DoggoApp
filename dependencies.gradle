@@ -91,6 +91,7 @@ ext {
     ]
 
     AndroidXTests = [
+            testChore             : "androidx.test:core:1.2.0",
             espresso              : "androidx.test.espresso:espresso-core:" + androidxExpressoCoreVersion,
             archChore             : "androidx.arch.core:core-testing:" + archChoreTesting,
             espressoContrib       : "androidx.test.espresso:espresso-contrib:" + androidxExpressoContribVersion,

@@ -7,15 +7,15 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.navigation.findNavController
 import androidx.navigation.navOptions
-import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
-import com.bumptech.glide.Glide
+import androidx.recyclerview.widget.RecyclerView
+import com.yashwant.doggo_api_bridge.imageloader.ImageLoader
 import com.yashwant.doggo_api_ui.R
 import com.yashwant.doggo_api_ui.view.KEY_URL
 
 
-class SubBreedListAdapter() : RecyclerView.Adapter<SubBreedListAdapter.SubBreedListViewHolder>() {
+class SubBreedListAdapter(private val imageLoader: ImageLoader) : RecyclerView.Adapter<SubBreedListAdapter.SubBreedListViewHolder>() {
 
     private val differCallback = object : DiffUtil.ItemCallback<String>() {
         override fun areItemsTheSame(oldItem: String, newItem: String): Boolean {
@@ -37,14 +37,7 @@ class SubBreedListAdapter() : RecyclerView.Adapter<SubBreedListAdapter.SubBreedL
 
     override fun onBindViewHolder(holder: SubBreedListViewHolder, position: Int) {
         val url = differ.currentList[position]
-        Glide.with(holder.imageView)
-            .load(url)
-            .centerCrop()
-            .placeholder(R.drawable.ic_doggo)
-            .error(R.drawable.ic_doggo)
-            .fallback(R.drawable.ic_doggo)
-            .into(holder.imageView)
-
+        imageLoader.loadImage(holder.imageView,url,R.drawable.ic_doggo)
         holder.itemView.setOnClickListener {
             val bundle = Bundle().apply {
                 putString(KEY_URL,url)

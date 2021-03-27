@@ -41,8 +41,8 @@ dependencies {
     implementation Jetbrain.kotlin
 
     //dagger dependency
-     implementation Google.dagger
-     kapt Google.daggerCompiler
+    implementation Google.dagger
+    kapt Google.daggerCompiler
 
     // retrofit dependency
     implementation Square.retrofitRxjavaAdapter
@@ -54,5 +54,20 @@ dependencies {
     implementation project(':doggo-api')
     implementation project(':doggo-api-ui')
 
-    implementation OtherTests.jUnit
+    androidTestImplementation AndroidXTests.androidXjUnit
+    androidTestImplementation AndroidXTests.espresso
+    androidTestImplementation Navigation.navigationTesting
+    testImplementation AndroidXTests.archChore
+
+
+    debugImplementation AndroidXTests.fragmentTesting
+    debugImplementation AndroidXTests.fragmentKtx
+    debugImplementation AndroidXTests.testChore
+    debugImplementation AndroidXTests.espressoRule
+    debugImplementation AndroidXTests.espressoRunner
+
+    testImplementation OtherTests.jUnit
+    testImplementation OtherTests.mockito
+    testImplementation OtherTests.mokitoKotlin
+
 }

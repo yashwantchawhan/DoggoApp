@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.facebook.shimmer.ShimmerFrameLayout
+import com.yashwant.doggo_api_bridge.imageloader.ImageLoader
 import com.yashwant.doggo_api_bridge.state.SubBreedState
 import com.yashwant.doggo_api_ui.R
 import com.yashwant.doggo_api_ui.di.DaggerSubBreedComponent
@@ -20,13 +21,15 @@ import javax.inject.Inject
 class SubBreedFragment : Fragment(R.layout.fragment_list_sub_breed) {
     @Inject
     lateinit var subBreedViewModel: SubBreedViewModel
+    @Inject
+    lateinit var imageLoader: ImageLoader
     private lateinit var subBreedListAdapter: SubBreedListAdapter
     private lateinit var shimmerFrameLayout: ShimmerFrameLayout
     private lateinit var recyclerView: RecyclerView
     private lateinit var subBreedErrorView: TextView
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        subBreedListAdapter = SubBreedListAdapter()
+        subBreedListAdapter = SubBreedListAdapter(imageLoader)
         recyclerView = view.findViewById(R.id.subBreedList)
         subBreedErrorView = view.findViewById(R.id.subBreedErrorView)
         shimmerFrameLayout = view.findViewById(R.id.shimmerLayoutSubBreed)
