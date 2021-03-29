@@ -77,10 +77,6 @@ class SubBreedFragment : Fragment(R.layout.fragment_list_sub_breed), SubBreedLis
         breedName?.let { subBreedViewModel.bind(it) }
     }
 
-    override fun onStop() {
-        super.onStop()
-    }
-
     private fun setUpDI() {
         requireActivity().let {
             DaggerSubBreedComponent.factory()

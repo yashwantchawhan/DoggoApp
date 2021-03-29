@@ -31,7 +31,7 @@ class SubBreedViewModelImpl(
     private fun observeSubBreedList(breedName: String) =
         doggoRepository.getSubBreedList(breedName)
             .subscribeOn(schedulerProvider.io())
-            .subscribeOn(schedulerProvider.ui())
+            .observeOn(schedulerProvider.ui())
             .doOnSubscribe {
                 state.postValue(SubBreedState.LoadingState)
             }

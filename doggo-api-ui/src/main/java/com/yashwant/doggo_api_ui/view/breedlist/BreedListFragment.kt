@@ -59,10 +59,6 @@ class BreedListFragment : Fragment(R.layout.fragment_list_breed), ListItemClickL
         }
     }
 
-    override fun onStop() {
-        super.onStop()
-    }
-
     private fun dependencies(activity: Activity) =
         (activity.application as DoggoDependenciesProvider).doggoCommonDependencies()
 
